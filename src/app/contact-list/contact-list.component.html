@@ -1,1 +1,9 @@
-<p>contact-list works!</p>
+<h2>My Contacts</h2>
+
+<ul class="Contact">
+    <li *ngFor="let Contact of Contacts" [class.selected]="contact === selectedContact" (click)="onSelect(contact)">
+        <span class="badge">{{contact.id}}</span> {{contact.name}}
+    </li>
+</ul>
+
+<app-contact-item-detail [contact]="selectedContact"></app-contact-item-detail>

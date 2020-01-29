@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Contacts } from "../mockContact";
+import { Contact } from "../contact";
 
 @Component({
   selector: "app-contacts",
@@ -10,7 +11,11 @@ export class ContactsComponent implements OnInit {
   constructor() {}
   contacts = Contacts;
 
+  selectedContact: Contact;
+  onSelect(contact: Contact): void {
+    this.selectedContact = contact;
+  }
   ngOnInit() {
-    console.log(this.contacts);
+    
   }
 }
